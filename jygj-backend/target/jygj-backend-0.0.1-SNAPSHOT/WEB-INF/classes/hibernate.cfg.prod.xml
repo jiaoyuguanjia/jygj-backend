@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+            "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+           "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!--Mysql JDBC连接数据库的配置-->
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/DB_JINLI?useUnicode=true&amp;characterEncoding=utf8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">Aa123456</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		
+		<property name="show_sql">true</property>
+		<property name="format_sql">false</property>
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<property name="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</property>
+ 		
+ 		
+		<mapping class="com.jygj.admin.dao.entity.ResumeEntity" />
+		<mapping class="com.jygj.admin.dao.entity.ProvinceEntity" />
+		<mapping class="com.jygj.admin.dao.entity.CityEntity" />
+		<mapping class="com.jygj.admin.dao.entity.AreaEntity" />
+
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,56 @@
+--1.安装git客户端
+地址: \\192.168.2.33\jjefs\Software\IT Special Tools\Git
+
+--2.创建github账号
+www.github.com
+
+>>>以下操作均在git Bash下操作
+--3.生成本机Key
+ssh-keygen -C 'xiaolinjava@163.com' -t rsa
+
+--4.登录gitHub上传Key
+找到第三步生成的id_rsa.pub文件（用户根目录下的.ssh文件夹下）,在gitHub点击Account settings进入账户管理页面，点击SSH Keys,输入Key内容，上传
+
+--下载gitHub远程项目
+git clone git@github.com:xiaolinjava/jygj-backend.git
+
+--告诉github你的姓名和邮箱
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+-- 建立本地项目版本库
+git init 
+
+--建立与远程git版本库的链接(git remote add origin url)
+git remote add origin git@github.com:xiaolinjava/jygj-backend.git
+
+--添加快照
+git add --all
+
+--提交代码到本地版本库
+git commit -m 'svn commit message'
+
+--将本地版本库代码上传到远程git版本库中
+git push origin master
+
+--更新代码
+git pull
+
+--撤销本地修改
+git reset --mixed
+
+--将本地修改暂存在git的仓库的栈工作区上
+git stash
+
+
+场景操作说明：
+1.有一种情况，git更新代码前，要保证本地代码没有修改，否则无法更新，除非你先提交掉，那么问题来了，我的代码还没有完成，我不想提交，但是又想更新代码，怎么办呢？
+答案是：git stash  
+这个命令相当于将你本地的修改暂存在git栈的工作区上
+执行这个命令后，再git pull就没有问题
+执行完git pull后，再执行git apply
+
+2.如果你没有修改代码，但是系统生成了一些代码，比如classpath里面的配置，跟生产环境的又不一样，这个时候直接git pull会告诉你本地有修改，存在树冲突
+答案：那么你可以使用 git reset --mixed
+这个命令会彻底撤销掉本地的修改
+
