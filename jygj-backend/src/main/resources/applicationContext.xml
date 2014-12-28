@@ -15,5 +15,9 @@
 	<!-- 扫描注解配置的包 -->
 	<context:component-scan base-package="com.jygj.admin.dao.impl" />
 	<context:component-scan base-package="com.jygj.admin.service.impl" />
+	<context:component-scan base-package="com.jygj.ws" />
+
+    <!-- enable autowire -->
+    <context:annotation-config />
 	
 </beans>
