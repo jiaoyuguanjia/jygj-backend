@@ -15,7 +15,7 @@
 	</context-param>
 	
 	<!-- 2.配置SpringMvc主控制器,所有的Action的请求都是通过这个主控制器进行分发的 -->
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>admin</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
@@ -28,7 +28,7 @@
 		<servlet-name>admin</servlet-name>
 		<url-pattern>*.html</url-pattern>
 		<url-pattern>*.json</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	
 	
   <servlet>  
