@@ -1,9 +1,10 @@
-package com.wuya.ws;
+package com.wuya.servcie.ws;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,13 +12,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.wuya.ws.util.CommonResult;
-import com.wuya.ws.util.CommonResultMap;
-import com.wuya.ws.util.JsonUtils;
+import com.wuya.model.User;
+import com.wuya.servcie.IUserService;
+import com.wuya.servcie.ws.util.CommonResult;
+import com.wuya.servcie.ws.util.CommonResultMap;
 
 @Controller
-public class HelloWorldController {
+public class HelloWorldController extends WsBase{
 	
+	@Autowired
+	private IUserService userService;
+	
+
+	@RequestMapping(value="/user/{userId}", method = RequestMethod.GET)
+	@ResponseBody
+	public String getUserById(@PathVariable("userId") Integer id){
+		System.out.println("enter get user by id by userId:"+id);
+		CommonResultMap map = new CommonResultMap();
+		try {
+			User user = userService.findUserById(id);
+			if(user != null){
+				map.setData(user);
+			}else{
+				map.setResult(CommonResult.NOT_FOUND, "未找到用户");
+			}
+		} catch (Exception e) {
+			handleException(map, e, e.getMessage());
+		}
+		return returnJsonResult(map);
+	}
+
+
 	@RequestMapping(value="/test/{count}", method = RequestMethod.GET)
 	@ResponseBody
 	public String createBlankCustomer(@PathVariable("count") Integer count){
@@ -42,13 +67,6 @@ public class HelloWorldController {
 	
 	
 	
-
-	private void handleException(CommonResultMap map, Exception e, String returnMessage){
-		if(e != null){
-			map.setResult(CommonResult.ERROR, returnMessage);
-		}
-	}
-	
 	/**
 	 * WebService 出错时会自动调用此方法
 	 * @param e
@@ -63,22 +81,6 @@ public class HelloWorldController {
 	}
 	
 	
-	/**
-	 * Convert result to JSON String<br>
-	 * <strong>All TextDetail object will return string value</strong>
-	 * @param map
-	 * @return
-	 */
-	private String returnJsonResult(CommonResultMap map){
-		String ret = null;
-		try{
-			ret = JsonUtils.toJSON(map,JsonUtils.JSON_EXCLUDE_FIELDS, JsonUtils.DEFAULT_JSON_DATE_PATTERN);
-		}catch(Exception e){
-//			String lang = AppContext.get() == null ? null: AppContext.get().getLanguage();
-//			ret = "{\"status\": "+CommonResult.EXCEPTION.getCode()+", \"msg\": \""+SysUtil.getLocaleText("error.convert.result.to.json", lang)+"\"}";
-//			log.error(e.getMessage() == null ? e.toString() : e.getMessage());
-		}
-		return ret;
-	}
+
 
 }

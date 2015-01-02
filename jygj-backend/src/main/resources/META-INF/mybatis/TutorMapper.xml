@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuya.dao.TutorMapper" >
+  <resultMap id="BaseResultMap" type="com.wuya.model.Tutor" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="profession" property="profession" jdbcType="INTEGER" />
+    <result column="teaching_age" property="teachingAge" jdbcType="INTEGER" />
+    <result column="tutoring_type" property="tutoringType" jdbcType="INTEGER" />
+    <result column="location_id" property="locationId" jdbcType="INTEGER" />
+    <result column="is_hide" property="isHide" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.wuya.model.TutorWithBLOBs" extends="BaseResultMap" >
+    <result column="profile" property="profile" jdbcType="LONGVARCHAR" />
+    <result column="edu_background" property="eduBackground" jdbcType="LONGVARCHAR" />
+    <result column="work_exp" property="workExp" jdbcType="LONGVARCHAR" />
+    <result column="remark" property="remark" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, profession, teaching_age, tutoring_type, location_id, is_hide
+  </sql>
+  <sql id="Blob_Column_List" >
+    profile, edu_background, work_exp, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tutor
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tutor
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wuya.model.TutorWithBLOBs" >
+    insert into tutor (id, user_id, profession, 
+      teaching_age, tutoring_type, location_id, 
+      is_hide, profile, edu_background, 
+      work_exp, remark)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{profession,jdbcType=INTEGER}, 
+      #{teachingAge,jdbcType=INTEGER}, #{tutoringType,jdbcType=INTEGER}, #{locationId,jdbcType=INTEGER}, 
+      #{isHide,jdbcType=INTEGER}, #{profile,jdbcType=LONGVARCHAR}, #{eduBackground,jdbcType=LONGVARCHAR}, 
+      #{workExp,jdbcType=LONGVARCHAR}, #{remark,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuya.model.TutorWithBLOBs" >
+    insert into tutor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="profession != null" >
+        profession,
+      </if>
+      <if test="teachingAge != null" >
+        teaching_age,
+      </if>
+      <if test="tutoringType != null" >
+        tutoring_type,
+      </if>
+      <if test="locationId != null" >
+        location_id,
+      </if>
+      <if test="isHide != null" >
+        is_hide,
+      </if>
+      <if test="profile != null" >
+        profile,
+      </if>
+      <if test="eduBackground != null" >
+        edu_background,
+      </if>
+      <if test="workExp != null" >
+        work_exp,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="profession != null" >
+        #{profession,jdbcType=INTEGER},
+      </if>
+      <if test="teachingAge != null" >
+        #{teachingAge,jdbcType=INTEGER},
+      </if>
+      <if test="tutoringType != null" >
+        #{tutoringType,jdbcType=INTEGER},
+      </if>
+      <if test="locationId != null" >
+        #{locationId,jdbcType=INTEGER},
+      </if>
+      <if test="isHide != null" >
+        #{isHide,jdbcType=INTEGER},
+      </if>
+      <if test="profile != null" >
+        #{profile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="eduBackground != null" >
+        #{eduBackground,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="workExp != null" >
+        #{workExp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuya.model.TutorWithBLOBs" >
+    update tutor
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="profession != null" >
+        profession = #{profession,jdbcType=INTEGER},
+      </if>
+      <if test="teachingAge != null" >
+        teaching_age = #{teachingAge,jdbcType=INTEGER},
+      </if>
+      <if test="tutoringType != null" >
+        tutoring_type = #{tutoringType,jdbcType=INTEGER},
+      </if>
+      <if test="locationId != null" >
+        location_id = #{locationId,jdbcType=INTEGER},
+      </if>
+      <if test="isHide != null" >
+        is_hide = #{isHide,jdbcType=INTEGER},
+      </if>
+      <if test="profile != null" >
+        profile = #{profile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="eduBackground != null" >
+        edu_background = #{eduBackground,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="workExp != null" >
+        work_exp = #{workExp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuya.model.TutorWithBLOBs" >
+    update tutor
+    set user_id = #{userId,jdbcType=INTEGER},
+      profession = #{profession,jdbcType=INTEGER},
+      teaching_age = #{teachingAge,jdbcType=INTEGER},
+      tutoring_type = #{tutoringType,jdbcType=INTEGER},
+      location_id = #{locationId,jdbcType=INTEGER},
+      is_hide = #{isHide,jdbcType=INTEGER},
+      profile = #{profile,jdbcType=LONGVARCHAR},
+      edu_background = #{eduBackground,jdbcType=LONGVARCHAR},
+      work_exp = #{workExp,jdbcType=LONGVARCHAR},
+      remark = #{remark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuya.model.Tutor" >
+    update tutor
+    set user_id = #{userId,jdbcType=INTEGER},
+      profession = #{profession,jdbcType=INTEGER},
+      teaching_age = #{teachingAge,jdbcType=INTEGER},
+      tutoring_type = #{tutoringType,jdbcType=INTEGER},
+      location_id = #{locationId,jdbcType=INTEGER},
+      is_hide = #{isHide,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
