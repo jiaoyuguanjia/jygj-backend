@@ -3,11 +3,13 @@ package com.wuya.servcie.ws;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,6 +43,33 @@ public class HelloWorldController extends WsBase{
 		}
 		return returnJsonResult(map);
 	}
+	
+	/**
+	 * 创建用户demo
+	 * @param id<br>
+	 * 输入：
+	 * {"icon":"","birthday":"","inBlacklist":0,"alias":"","gender":0,"realName":"捣蛋大师","mobileNo":1829384732,"userType":2,"password":"123123"}<br>
+	 * 输出：
+	 * {"status":0,"DATA":{"id":5,"icon":"","birthday":"","inBlacklist":0,"alias":"","gender":0,"realName":"捣蛋大师","mobileNo":1829384732,"userType":2},"msg":"创建用户成功"}
+	 * @return
+	 */
+	@RequestMapping(value="/user/create", method = RequestMethod.POST)
+	@ResponseBody
+	public String createUser(@RequestBody User inputUser){
+		CommonResultMap map = new CommonResultMap();
+		try {
+			User user = userService.createNewUser(inputUser);
+			if(user != null){
+				map.setData(user);
+				map.setMessage("创建用户成功");
+			}else{
+				map.setResult(CommonResult.EXCEPTION, "创建用户失败");
+			}
+		} catch (Exception e) {
+			handleException(map, e, e.getMessage());
+		}
+		return returnJsonResult(map);
+	}
 
 
 	@RequestMapping(value="/test/{count}", method = RequestMethod.GET)
@@ -67,20 +96,4 @@ public class HelloWorldController extends WsBase{
 	
 	
 	
-	/**
-	 * WebService 出错时会自动调用此方法
-	 * @param e
-	 * @return
-	 */
-	@ExceptionHandler
-	private @ResponseBody String handle(Exception e){
-		System.err.print(e.getStackTrace());
-		CommonResultMap map = new CommonResultMap();
-		map.setMessage(e.getMessage() == null ? e.toString() : e.getMessage());
-		return returnJsonResult(map);
-	}
-	
-	
-
-
 }

@@ -13,14 +13,6 @@ public class UserService implements IUserService {
 	@Autowired
 	private UserMapper userMapper;
 
-	public UserMapper getUserMapper() {
-		return userMapper;
-	}
-
-	public void setUserMapper(UserMapper userMapper) {
-		this.userMapper = userMapper;
-	}
-
 	@Override
 	public User findUserById(Integer id) {
 		if(id != null){
@@ -28,6 +20,14 @@ public class UserService implements IUserService {
 		}else{
 			return null;
 		}
+	}
+
+	@Override
+	public User createNewUser(User u) {
+		if(u != null){
+		  userMapper.insert(u);
+		}
+		return u;
 	}
 
 }

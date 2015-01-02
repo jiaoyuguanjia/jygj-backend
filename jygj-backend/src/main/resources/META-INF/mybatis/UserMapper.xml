@@ -27,11 +27,14 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.wuya.model.User" >
-    insert into user (id, user_type, mobile_no, 
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user (user_type, mobile_no, 
       password, real_name, alias, 
       gender, birthday, icon, 
       in_blacklist)
-    values (#{id,jdbcType=INTEGER}, #{userType,jdbcType=INTEGER}, #{mobileNo,jdbcType=INTEGER}, 
+    values (#{userType,jdbcType=INTEGER}, #{mobileNo,jdbcType=INTEGER}, 
       #{password,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR}, 
       #{gender,jdbcType=INTEGER}, #{birthday,jdbcType=TIMESTAMP}, #{icon,jdbcType=VARCHAR}, 
       #{inBlacklist,jdbcType=INTEGER})
