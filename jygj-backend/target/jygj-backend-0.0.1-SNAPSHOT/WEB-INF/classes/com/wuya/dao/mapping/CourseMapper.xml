@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuya.dao.CourseMapper" >
+  <resultMap id="BaseResultMap" type="com.wuya.model.Course" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="tutor_id" property="tutorId" jdbcType="INTEGER" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="tuition" property="tuition" jdbcType="INTEGER" />
+    <result column="duration" property="duration" jdbcType="INTEGER" />
+    <result column="approval_status" property="approvalStatus" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="is_hide" property="isHide" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.wuya.model.Course" extends="BaseResultMap" >
+    <result column="course_intro" property="courseIntro" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, tutor_id, category_id, tuition, duration, approval_status, remark, is_hide
+  </sql>
+  <sql id="Blob_Column_List" >
+    course_intro
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from course
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from course
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wuya.model.Course" >
+    insert into course (id, tutor_id, category_id, 
+      tuition, duration, approval_status, 
+      remark, is_hide, course_intro
+      )
+    values (#{id,jdbcType=INTEGER}, #{tutorId,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, 
+      #{tuition,jdbcType=INTEGER}, #{duration,jdbcType=INTEGER}, #{approvalStatus,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{isHide,jdbcType=INTEGER}, #{courseIntro,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuya.model.Course" >
+    insert into course
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tutorId != null" >
+        tutor_id,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="tuition != null" >
+        tuition,
+      </if>
+      <if test="duration != null" >
+        duration,
+      </if>
+      <if test="approvalStatus != null" >
+        approval_status,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="isHide != null" >
+        is_hide,
+      </if>
+      <if test="courseIntro != null" >
+        course_intro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tutorId != null" >
+        #{tutorId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="tuition != null" >
+        #{tuition,jdbcType=INTEGER},
+      </if>
+      <if test="duration != null" >
+        #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="approvalStatus != null" >
+        #{approvalStatus,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isHide != null" >
+        #{isHide,jdbcType=INTEGER},
+      </if>
+      <if test="courseIntro != null" >
+        #{courseIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuya.model.Course" >
+    update course
+    <set >
+      <if test="tutorId != null" >
+        tutor_id = #{tutorId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="tuition != null" >
+        tuition = #{tuition,jdbcType=INTEGER},
+      </if>
+      <if test="duration != null" >
+        duration = #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="approvalStatus != null" >
+        approval_status = #{approvalStatus,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isHide != null" >
+        is_hide = #{isHide,jdbcType=INTEGER},
+      </if>
+      <if test="courseIntro != null" >
+        course_intro = #{courseIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuya.model.Course" >
+    update course
+    set tutor_id = #{tutorId,jdbcType=INTEGER},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      tuition = #{tuition,jdbcType=INTEGER},
+      duration = #{duration,jdbcType=INTEGER},
+      approval_status = #{approvalStatus,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      is_hide = #{isHide,jdbcType=INTEGER},
+      course_intro = #{courseIntro,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuya.model.Course" >
+    update course
+    set tutor_id = #{tutorId,jdbcType=INTEGER},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      tuition = #{tuition,jdbcType=INTEGER},
+      duration = #{duration,jdbcType=INTEGER},
+      approval_status = #{approvalStatus,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      is_hide = #{isHide,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
