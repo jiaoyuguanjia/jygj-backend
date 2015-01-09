@@ -69,5 +69,42 @@ public class MobileUserServcie extends WsBase{
 		 */
 		return null;
 	}
-	
+	/**
+	 * 登录
+	 * @param signupVo<br>
+	 * 输入：
+	 * {"mobileNo":1829384732,"password":"123123"}<br>
+	 * 输出：<br>
+	 * 登录成功<br>
+	 * {"status":0,"msg":"登录成功"，"DATA":{"token":"wewewsds"}}<br>
+	 * 异常：<br>
+	 * {"status":1,"msg":"用户名不存在"}<br>
+	 * {"status":3,"msg":"密码错误"}<br>
+	 * {"status":-2,"msg":"系统异常"}<br>
+	 * @return
+	 */
+	@RequestMapping(value="/login", method = RequestMethod.POST)
+	@ResponseBody
+	public String login(@RequestBody SignupVo signupVo){
+		return null;
+	}
+	/**
+	 * 退出
+	 * @param token<br>
+	 * 输入：
+	 * {"mobileNo":1829384732,"password":"123123"}<br>
+	 * 输出：<br>
+	 * 登录成功<br>
+	 * {"status":0,"msg":"登录成功"，"DATA":{"token":"wewewsds"}}<br>
+	 * 异常：<br>
+	 * {"status":1,"msg":"用户名不存在"}<br>
+	 * {"status":3,"msg":"密码错误"}<br>
+	 * {"status":-2,"msg":"系统异常"}<br>
+	 * @return
+	 */
+	@RequestMapping(value="/logout/{token}", method = RequestMethod.GET)
+	@ResponseBody
+	public String logout(@PathVariable String token){
+		return null;
+	}
 }
