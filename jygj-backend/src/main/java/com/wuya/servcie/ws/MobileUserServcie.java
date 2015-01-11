@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.system.util.CommonResult;
+import com.system.util.CommonResultMap;
 import com.wuya.SignupVo;
-import com.wuya.model.User;
 
 public class MobileUserServcie extends WsBase{	
 	/**
@@ -36,8 +37,12 @@ public class MobileUserServcie extends WsBase{
 		 * 5. 特殊处理：如果发现缓存里面有，需要发送同一个验证码（防止半小时内多次发送）
 		 * 6. 异常处理
 		 */
-		return null;
+		CommonResultMap map = new CommonResultMap();
+		map.setResult(CommonResult.SUCCESS, "验证码发送成功");
+		return returnJsonResult(map);
 	}
+	
+	
 	/**
 	 * 用户注册
 	 * @param signupVo<br>

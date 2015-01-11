@@ -1,73 +1,77 @@
 package com.wuya.model;
 
 public class Tutor {
-    private Integer id;
 
-    private Integer userId;
+	private Integer id;
+	private Integer user_id;
+	private Integer profession;
+	private Integer teaching_age;
+	private String tutoring_timing;
+	private Integer tutoring_type;
+	private Integer is_hide;
+	private String tutoring_area;
 
-    private Integer profession;
+	public Integer getId() {
+		return id;
+	}
 
-    private Integer teachingAge;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    private Integer tutoringType;
+	public Integer getUser_id() {
+		return user_id;
+	}
 
-    private Integer locationId;
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
+	}
 
-    private Integer isHide;
+	public Integer getProfession() {
+		return profession;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public void setProfession(Integer profession) {
+		this.profession = profession;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getTeaching_age() {
+		return teaching_age;
+	}
 
-    public Integer getUserId() {
-        return userId;
-    }
+	public void setTeaching_age(Integer teaching_age) {
+		this.teaching_age = teaching_age;
+	}
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
+	public String getTutoring_timing() {
+		return tutoring_timing;
+	}
 
-    public Integer getProfession() {
-        return profession;
-    }
+	public void setTutoring_timing(String tutoring_timing) {
+		this.tutoring_timing = tutoring_timing;
+	}
 
-    public void setProfession(Integer profession) {
-        this.profession = profession;
-    }
+	public Integer getTutoring_type() {
+		return tutoring_type;
+	}
 
-    public Integer getTeachingAge() {
-        return teachingAge;
-    }
+	public void setTutoring_type(Integer tutoring_type) {
+		this.tutoring_type = tutoring_type;
+	}
 
-    public void setTeachingAge(Integer teachingAge) {
-        this.teachingAge = teachingAge;
-    }
+	public Integer getIs_hide() {
+		return is_hide;
+	}
 
-    public Integer getTutoringType() {
-        return tutoringType;
-    }
+	public void setIs_hide(Integer is_hide) {
+		this.is_hide = is_hide;
+	}
 
-    public void setTutoringType(Integer tutoringType) {
-        this.tutoringType = tutoringType;
-    }
+	public String getTutoring_area() {
+		return tutoring_area;
+	}
 
-    public Integer getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(Integer locationId) {
-        this.locationId = locationId;
-    }
-
-    public Integer getIsHide() {
-        return isHide;
-    }
-
-    public void setIsHide(Integer isHide) {
-        this.isHide = isHide;
-    }
+	public void setTutoring_area(String tutoring_area) {
+		this.tutoring_area = tutoring_area;
+	}
 }

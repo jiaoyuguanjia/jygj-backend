@@ -3,103 +3,104 @@ package com.wuya.model;
 import java.util.Date;
 
 public class User {
-    private Integer id;
 
-    private Integer userType;
+	private Integer id;
+	private Integer user_type;
+	private Integer mobile_no;
+	private String password;
+	private String real_name;
+	private String email;
+	private String alias;
+	private Integer gender;
+	private Date birthday;
+	private String icon;
+	private Integer in_blacklist;
 
-    private Integer mobileNo;
+	public Integer getId() {
+		return id;
+	}
 
-    private String password;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    private String realName;
+	public Integer getUser_type() {
+		return user_type;
+	}
 
-    private String alias;
+	public void setUser_type(Integer user_type) {
+		this.user_type = user_type;
+	}
 
-    private Integer gender;
+	public Integer getMobile_no() {
+		return mobile_no;
+	}
 
-    private Date birthday;
+	public void setMobile_no(Integer mobile_no) {
+		this.mobile_no = mobile_no;
+	}
 
-    private String icon;
+	public String getPassword() {
+		return password;
+	}
 
-    private Integer inBlacklist;
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public String getReal_name() {
+		return real_name;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setReal_name(String real_name) {
+		this.real_name = real_name;
+	}
 
-    public Integer getUserType() {
-        return userType;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setUserType(Integer userType) {
-        this.userType = userType;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public Integer getMobileNo() {
-        return mobileNo;
-    }
+	public String getAlias() {
+		return alias;
+	}
 
-    public void setMobileNo(Integer mobileNo) {
-        this.mobileNo = mobileNo;
-    }
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public Integer getGender() {
+		return gender;
+	}
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
+	public void setGender(Integer gender) {
+		this.gender = gender;
+	}
 
-    public String getRealName() {
-        return realName;
-    }
+	public Date getBirthday() {
+		return birthday;
+	}
 
-    public void setRealName(String realName) {
-        this.realName = realName == null ? null : realName.trim();
-    }
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
 
-    public String getAlias() {
-        return alias;
-    }
+	public String getIcon() {
+		return icon;
+	}
 
-    public void setAlias(String alias) {
-        this.alias = alias == null ? null : alias.trim();
-    }
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
 
-    public Integer getGender() {
-        return gender;
-    }
+	public Integer getIn_blacklist() {
+		return in_blacklist;
+	}
 
-    public void setGender(Integer gender) {
-        this.gender = gender;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon == null ? null : icon.trim();
-    }
-
-    public Integer getInBlacklist() {
-        return inBlacklist;
-    }
-
-    public void setInBlacklist(Integer inBlacklist) {
-        this.inBlacklist = inBlacklist;
-    }
+	public void setIn_blacklist(Integer in_blacklist) {
+		this.in_blacklist = in_blacklist;
+	}
 }

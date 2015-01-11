@@ -1,73 +1,68 @@
 package com.wuya.model;
 
 public class Qualification {
-    private Integer id;
 
-    private Integer tutorId;
+	private Integer id;
+	private Integer tutor_id;
+	private Integer qualification_type;
+	private String img_url;
+	private String certificate_des;
+	private Integer approval_status;
+	private String remark;
 
-    private Integer qualificationType;
+	public Integer getId() {
+		return id;
+	}
 
-    private String imgUrl;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    private String certificateDes;
+	public Integer getTutor_id() {
+		return tutor_id;
+	}
 
-    private Integer approvalStatus;
+	public void setTutor_id(Integer tutor_id) {
+		this.tutor_id = tutor_id;
+	}
 
-    private String remark;
+	public Integer getQualification_type() {
+		return qualification_type;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public void setQualification_type(Integer qualification_type) {
+		this.qualification_type = qualification_type;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public String getImg_url() {
+		return img_url;
+	}
 
-    public Integer getTutorId() {
-        return tutorId;
-    }
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
+	}
 
-    public void setTutorId(Integer tutorId) {
-        this.tutorId = tutorId;
-    }
+	public String getCertificate_des() {
+		return certificate_des;
+	}
 
-    public Integer getQualificationType() {
-        return qualificationType;
-    }
+	public void setCertificate_des(String certificate_des) {
+		this.certificate_des = certificate_des;
+	}
 
-    public void setQualificationType(Integer qualificationType) {
-        this.qualificationType = qualificationType;
-    }
+	public Integer getApproval_status() {
+		return approval_status;
+	}
 
-    public String getImgUrl() {
-        return imgUrl;
-    }
+	public void setApproval_status(Integer approval_status) {
+		this.approval_status = approval_status;
+	}
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl == null ? null : imgUrl.trim();
-    }
+	public String getRemark() {
+		return remark;
+	}
 
-    public String getCertificateDes() {
-        return certificateDes;
-    }
-
-    public void setCertificateDes(String certificateDes) {
-        this.certificateDes = certificateDes == null ? null : certificateDes.trim();
-    }
-
-    public Integer getApprovalStatus() {
-        return approvalStatus;
-    }
-
-    public void setApprovalStatus(Integer approvalStatus) {
-        this.approvalStatus = approvalStatus;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 }

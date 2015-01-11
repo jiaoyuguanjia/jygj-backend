@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+<classPathEntry location="D:\dev\repository_2\mysql\mysql-connector-java\5.1.28\mysql-connector-java-5.1.28.jar" />
+ 
+  <context id="context1"  targetRuntime="MyBatis3" >
+  
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/wuya"
+        userId="root"
+        password="password">
+    </jdbcConnection>
+   
+    
+    <javaModelGenerator targetPackage="com.wuya.model" targetProject="jygj-backend\src\main\java" />
+    <sqlMapGenerator targetPackage="com.wuya.dao.mapping" targetProject="jygj-backend\src\main\java" />
+    <javaClientGenerator targetPackage="com.wuya.dao" targetProject="jygj-backend\src\main\java" type="XMLMAPPER" />
+    
+    
+    <table schema="wuya" tableName="category" domainObjectName="Category"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false">
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="course" domainObjectName="Course"   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false">
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="help_find_tutor" domainObjectName="HelpFindTutor"   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false">
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="qualification" domainObjectName="Qualification"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+     <table schema="wuya" tableName="registration" domainObjectName="Registration"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="send_sms" domainObjectName="SendSMS"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="student" domainObjectName="Student"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="tutor" domainObjectName="Tutor"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="user" domainObjectName="User"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+    
+    <table schema="wuya" tableName="user_token" domainObjectName="UserToken"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"  enableSelectByExample="false" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="id" sqlStatement="mysql" identity="true" />
+    </table>
+
+  </context>
+</generatorConfiguration>

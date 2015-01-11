@@ -1,93 +1,86 @@
 package com.wuya.model;
 
 public class Course {
-    private Integer id;
 
-    private Integer tutorId;
+	private Integer id;
+	private Integer tutor_id;
+	private Integer category_id;
+	private Integer tuition;
+	private Integer duration;
+	private Integer approval_status;
+	private String remark;
+	private Integer is_hide;
+	private String course_intro;
 
-    private Integer categoryId;
+	public Integer getId() {
+		return id;
+	}
 
-    private Integer tuition;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    private Integer duration;
+	public Integer getTutor_id() {
+		return tutor_id;
+	}
 
-    private Integer approvalStatus;
+	public void setTutor_id(Integer tutor_id) {
+		this.tutor_id = tutor_id;
+	}
 
-    private String remark;
+	public Integer getCategory_id() {
+		return category_id;
+	}
 
-    private Integer isHide;
+	public void setCategory_id(Integer category_id) {
+		this.category_id = category_id;
+	}
 
-    private String courseIntro;
+	public Integer getTuition() {
+		return tuition;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public void setTuition(Integer tuition) {
+		this.tuition = tuition;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getDuration() {
+		return duration;
+	}
 
-    public Integer getTutorId() {
-        return tutorId;
-    }
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+	}
 
-    public void setTutorId(Integer tutorId) {
-        this.tutorId = tutorId;
-    }
+	public Integer getApproval_status() {
+		return approval_status;
+	}
 
-    public Integer getCategoryId() {
-        return categoryId;
-    }
+	public void setApproval_status(Integer approval_status) {
+		this.approval_status = approval_status;
+	}
 
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
+	public String getRemark() {
+		return remark;
+	}
 
-    public Integer getTuition() {
-        return tuition;
-    }
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 
-    public void setTuition(Integer tuition) {
-        this.tuition = tuition;
-    }
+	public Integer getIs_hide() {
+		return is_hide;
+	}
 
-    public Integer getDuration() {
-        return duration;
-    }
+	public void setIs_hide(Integer is_hide) {
+		this.is_hide = is_hide;
+	}
 
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
+	public String getCourse_intro() {
+		return course_intro;
+	}
 
-    public Integer getApprovalStatus() {
-        return approvalStatus;
-    }
-
-    public void setApprovalStatus(Integer approvalStatus) {
-        this.approvalStatus = approvalStatus;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    public Integer getIsHide() {
-        return isHide;
-    }
-
-    public void setIsHide(Integer isHide) {
-        this.isHide = isHide;
-    }
-
-    public String getCourseIntro() {
-        return courseIntro;
-    }
-
-    public void setCourseIntro(String courseIntro) {
-        this.courseIntro = courseIntro == null ? null : courseIntro.trim();
-    }
+	public void setCourse_intro(String course_intro) {
+		this.course_intro = course_intro;
+	}
 }

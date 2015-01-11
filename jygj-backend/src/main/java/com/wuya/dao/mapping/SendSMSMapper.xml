@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuya.dao.SendSMSMapper" >
+  <resultMap id="BaseResultMap" type="com.wuya.model.SendSMS" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="sid" property="sid" jdbcType="CHAR" />
+    <result column="sms_type" property="sms_type" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="phone_number" property="phone_number" jdbcType="VARCHAR" />
+    <result column="sent_result" property="sent_result" jdbcType="INTEGER" />
+    <result column="userd" property="userd" jdbcType="INTEGER" />
+    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modify_time" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sid, sms_type, content, phone_number, sent_result, userd, create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from send_sms
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from send_sms
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wuya.model.SendSMS" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into send_sms (sid, sms_type, content, 
+      phone_number, sent_result, userd, 
+      create_time, modify_time)
+    values (#{sid,jdbcType=CHAR}, #{sms_type,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{phone_number,jdbcType=VARCHAR}, #{sent_result,jdbcType=INTEGER}, #{userd,jdbcType=INTEGER}, 
+      #{create_time,jdbcType=TIMESTAMP}, #{modify_time,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuya.model.SendSMS" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into send_sms
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="sms_type != null" >
+        sms_type,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="phone_number != null" >
+        phone_number,
+      </if>
+      <if test="sent_result != null" >
+        sent_result,
+      </if>
+      <if test="userd != null" >
+        userd,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
+      <if test="modify_time != null" >
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        #{sid,jdbcType=CHAR},
+      </if>
+      <if test="sms_type != null" >
+        #{sms_type,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="phone_number != null" >
+        #{phone_number,jdbcType=VARCHAR},
+      </if>
+      <if test="sent_result != null" >
+        #{sent_result,jdbcType=INTEGER},
+      </if>
+      <if test="userd != null" >
+        #{userd,jdbcType=INTEGER},
+      </if>
+      <if test="create_time != null" >
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modify_time != null" >
+        #{modify_time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuya.model.SendSMS" >
+    update send_sms
+    <set >
+      <if test="sid != null" >
+        sid = #{sid,jdbcType=CHAR},
+      </if>
+      <if test="sms_type != null" >
+        sms_type = #{sms_type,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="phone_number != null" >
+        phone_number = #{phone_number,jdbcType=VARCHAR},
+      </if>
+      <if test="sent_result != null" >
+        sent_result = #{sent_result,jdbcType=INTEGER},
+      </if>
+      <if test="userd != null" >
+        userd = #{userd,jdbcType=INTEGER},
+      </if>
+      <if test="create_time != null" >
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modify_time != null" >
+        modify_time = #{modify_time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuya.model.SendSMS" >
+    update send_sms
+    set sid = #{sid,jdbcType=CHAR},
+      sms_type = #{sms_type,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      phone_number = #{phone_number,jdbcType=VARCHAR},
+      sent_result = #{sent_result,jdbcType=INTEGER},
+      userd = #{userd,jdbcType=INTEGER},
+      create_time = #{create_time,jdbcType=TIMESTAMP},
+      modify_time = #{modify_time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
