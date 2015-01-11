@@ -1,4 +1,4 @@
-package com.wuya.servcie.ws.util;
+package com.system.util;
 
 
 import java.util.Collection;

@@ -4,9 +4,9 @@ import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.wuya.servcie.ws.util.CommonResult;
-import com.wuya.servcie.ws.util.CommonResultMap;
-import com.wuya.servcie.ws.util.JsonUtils;
+import com.system.util.CommonResult;
+import com.system.util.CommonResultMap;
+import com.system.util.JsonUtils;
 
 public class WsBase {
 	public static final Logger log = Logger.getLogger(WsBase.class);

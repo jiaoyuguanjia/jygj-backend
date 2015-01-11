@@ -1,18 +1,14 @@
-package com.wuya.servcie.ws.util;
-
+package com.system.util;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 @SuppressWarnings("rawtypes")
 public class CommonResultMap extends HashMap implements Map {
 	private static final long	serialVersionUID	= -3469936673137441995L;
-	
-	private static final Logger logger = LoggerFactory.getLogger(CommonResultMap.class);
 
 	public CommonResultMap(){
 		this.setResult(CommonResult.ERROR);
@@ -33,7 +29,7 @@ public class CommonResultMap extends HashMap implements Map {
 			this.setMessage("UNKNOWN ERROR");
 		}
 		if(result.getCode() == CommonResult.EXCEPTION.getCode()){
-			logger.error(message);
+			Logger.getLogger(CommonResultMap.class).error(message);
 		}
 	}
 	

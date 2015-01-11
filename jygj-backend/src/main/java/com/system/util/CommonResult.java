@@ -1,5 +1,4 @@
-package com.wuya.servcie.ws.util;
-
+package com.system.util;
 
 public enum CommonResult {
 	SUCCESS(0),
