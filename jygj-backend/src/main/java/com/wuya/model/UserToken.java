@@ -3,68 +3,73 @@ package com.wuya.model;
 import java.util.Date;
 
 public class UserToken {
+    private Integer id;
 
-	private Integer id;
-	private Integer user_id;
-	private String token;
-	private String device_code;
-	private Integer is_deleted;
-	private Date create_time;
-	private Date modify_time;
+    private Integer userId;
 
-	public Integer getId() {
-		return id;
-	}
+    private String token;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private String deviceCode;
 
-	public Integer getUser_id() {
-		return user_id;
-	}
+    private Integer isDeleted;
 
-	public void setUser_id(Integer user_id) {
-		this.user_id = user_id;
-	}
+    private Date createTime;
 
-	public String getToken() {
-		return token;
-	}
+    private Date modifyTime;
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getDevice_code() {
-		return device_code;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setDevice_code(String device_code) {
-		this.device_code = device_code;
-	}
+    public Integer getUserId() {
+        return userId;
+    }
 
-	public Integer getIs_deleted() {
-		return is_deleted;
-	}
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	public void setIs_deleted(Integer is_deleted) {
-		this.is_deleted = is_deleted;
-	}
+    public String getToken() {
+        return token;
+    }
 
-	public Date getCreate_time() {
-		return create_time;
-	}
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-	public void setCreate_time(Date create_time) {
-		this.create_time = create_time;
-	}
+    public String getDeviceCode() {
+        return deviceCode;
+    }
 
-	public Date getModify_time() {
-		return modify_time;
-	}
+    public void setDeviceCode(String deviceCode) {
+        this.deviceCode = deviceCode;
+    }
 
-	public void setModify_time(Date modify_time) {
-		this.modify_time = modify_time;
-	}
+    public Integer getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(Integer isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
 }

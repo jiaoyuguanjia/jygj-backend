@@ -17,6 +17,10 @@ public enum CommonResult {
 	
 	HAVE_UPDATES(5),
 	
+	NOT_START(6),
+	
+	IN_PROCESS(7),
+	
 	SITE_DISABLED(10),
 	;
 	

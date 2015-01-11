@@ -3,7 +3,7 @@
 <mapper namespace="com.wuya.dao.StudentMapper" >
   <resultMap id="BaseResultMap" type="com.wuya.model.Student" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="user_id" property="user_id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, user_id
@@ -23,7 +23,7 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into student (user_id)
-    values (#{user_id,jdbcType=INTEGER})
+    values (#{userId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.wuya.model.Student" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
@@ -31,28 +31,28 @@
     </selectKey>
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="user_id != null" >
+      <if test="userId != null" >
         user_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="user_id != null" >
-        #{user_id,jdbcType=INTEGER},
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.wuya.model.Student" >
     update student
     <set >
-      <if test="user_id != null" >
-        user_id = #{user_id,jdbcType=INTEGER},
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wuya.model.Student" >
     update student
-    set user_id = #{user_id,jdbcType=INTEGER}
+    set user_id = #{userId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

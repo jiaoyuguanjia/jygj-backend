@@ -1,104 +1,113 @@
 package com.wuya.model;
 
 public class HelpFindTutor {
+    private Integer id;
 
-	private Integer id;
-	private Integer student_id;
-	private String my_requirement;
-	private String my_name;
-	private Integer my_mobile_no;
-	private Integer find_status;
-	private String student_profile;
-	private Integer matched_tutor_id;
-	private String matched_tutor_name;
-	private Integer matched_tutor_phone;
-	private String matched_tutor_profile;
+    private Integer studentId;
 
-	public Integer getId() {
-		return id;
-	}
+    private String myRequirement;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private String myName;
 
-	public Integer getStudent_id() {
-		return student_id;
-	}
+    private Integer myMobileNo;
 
-	public void setStudent_id(Integer student_id) {
-		this.student_id = student_id;
-	}
+    private Integer findStatus;
 
-	public String getMy_requirement() {
-		return my_requirement;
-	}
+    private String studentProfile;
 
-	public void setMy_requirement(String my_requirement) {
-		this.my_requirement = my_requirement;
-	}
+    private Integer matchedTutorId;
 
-	public String getMy_name() {
-		return my_name;
-	}
+    private String matchedTutorName;
 
-	public void setMy_name(String my_name) {
-		this.my_name = my_name;
-	}
+    private Integer matchedTutorPhone;
 
-	public Integer getMy_mobile_no() {
-		return my_mobile_no;
-	}
+    private String matchedTutorProfile;
 
-	public void setMy_mobile_no(Integer my_mobile_no) {
-		this.my_mobile_no = my_mobile_no;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public Integer getFind_status() {
-		return find_status;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setFind_status(Integer find_status) {
-		this.find_status = find_status;
-	}
+    public Integer getStudentId() {
+        return studentId;
+    }
 
-	public String getStudent_profile() {
-		return student_profile;
-	}
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
+    }
 
-	public void setStudent_profile(String student_profile) {
-		this.student_profile = student_profile;
-	}
+    public String getMyRequirement() {
+        return myRequirement;
+    }
 
-	public Integer getMatched_tutor_id() {
-		return matched_tutor_id;
-	}
+    public void setMyRequirement(String myRequirement) {
+        this.myRequirement = myRequirement;
+    }
 
-	public void setMatched_tutor_id(Integer matched_tutor_id) {
-		this.matched_tutor_id = matched_tutor_id;
-	}
+    public String getMyName() {
+        return myName;
+    }
 
-	public String getMatched_tutor_name() {
-		return matched_tutor_name;
-	}
+    public void setMyName(String myName) {
+        this.myName = myName;
+    }
 
-	public void setMatched_tutor_name(String matched_tutor_name) {
-		this.matched_tutor_name = matched_tutor_name;
-	}
+    public Integer getMyMobileNo() {
+        return myMobileNo;
+    }
 
-	public Integer getMatched_tutor_phone() {
-		return matched_tutor_phone;
-	}
+    public void setMyMobileNo(Integer myMobileNo) {
+        this.myMobileNo = myMobileNo;
+    }
 
-	public void setMatched_tutor_phone(Integer matched_tutor_phone) {
-		this.matched_tutor_phone = matched_tutor_phone;
-	}
+    public Integer getFindStatus() {
+        return findStatus;
+    }
 
-	public String getMatched_tutor_profile() {
-		return matched_tutor_profile;
-	}
+    public void setFindStatus(Integer findStatus) {
+        this.findStatus = findStatus;
+    }
 
-	public void setMatched_tutor_profile(String matched_tutor_profile) {
-		this.matched_tutor_profile = matched_tutor_profile;
-	}
+    public String getStudentProfile() {
+        return studentProfile;
+    }
+
+    public void setStudentProfile(String studentProfile) {
+        this.studentProfile = studentProfile;
+    }
+
+    public Integer getMatchedTutorId() {
+        return matchedTutorId;
+    }
+
+    public void setMatchedTutorId(Integer matchedTutorId) {
+        this.matchedTutorId = matchedTutorId;
+    }
+
+    public String getMatchedTutorName() {
+        return matchedTutorName;
+    }
+
+    public void setMatchedTutorName(String matchedTutorName) {
+        this.matchedTutorName = matchedTutorName;
+    }
+
+    public Integer getMatchedTutorPhone() {
+        return matchedTutorPhone;
+    }
+
+    public void setMatchedTutorPhone(Integer matchedTutorPhone) {
+        this.matchedTutorPhone = matchedTutorPhone;
+    }
+
+    public String getMatchedTutorProfile() {
+        return matchedTutorProfile;
+    }
+
+    public void setMatchedTutorProfile(String matchedTutorProfile) {
+        this.matchedTutorProfile = matchedTutorProfile;
+    }
 }

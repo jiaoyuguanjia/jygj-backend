@@ -3,16 +3,16 @@
 <mapper namespace="com.wuya.dao.HelpFindTutorMapper" >
   <resultMap id="BaseResultMap" type="com.wuya.model.HelpFindTutor" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="student_id" property="student_id" jdbcType="INTEGER" />
-    <result column="my_requirement" property="my_requirement" jdbcType="VARCHAR" />
-    <result column="my_name" property="my_name" jdbcType="VARCHAR" />
-    <result column="my_mobile_no" property="my_mobile_no" jdbcType="INTEGER" />
-    <result column="find_status" property="find_status" jdbcType="INTEGER" />
-    <result column="student_profile" property="student_profile" jdbcType="VARCHAR" />
-    <result column="matched_tutor_id" property="matched_tutor_id" jdbcType="INTEGER" />
-    <result column="matched_tutor_name" property="matched_tutor_name" jdbcType="VARCHAR" />
-    <result column="matched_tutor_phone" property="matched_tutor_phone" jdbcType="INTEGER" />
-    <result column="matched_tutor_profile" property="matched_tutor_profile" jdbcType="VARCHAR" />
+    <result column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="my_requirement" property="myRequirement" jdbcType="VARCHAR" />
+    <result column="my_name" property="myName" jdbcType="VARCHAR" />
+    <result column="my_mobile_no" property="myMobileNo" jdbcType="INTEGER" />
+    <result column="find_status" property="findStatus" jdbcType="INTEGER" />
+    <result column="student_profile" property="studentProfile" jdbcType="VARCHAR" />
+    <result column="matched_tutor_id" property="matchedTutorId" jdbcType="INTEGER" />
+    <result column="matched_tutor_name" property="matchedTutorName" jdbcType="VARCHAR" />
+    <result column="matched_tutor_phone" property="matchedTutorPhone" jdbcType="INTEGER" />
+    <result column="matched_tutor_profile" property="matchedTutorProfile" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, student_id, my_requirement, my_name, my_mobile_no, find_status, student_profile, 
@@ -36,10 +36,10 @@
       my_mobile_no, find_status, student_profile, 
       matched_tutor_id, matched_tutor_name, matched_tutor_phone, 
       matched_tutor_profile)
-    values (#{student_id,jdbcType=INTEGER}, #{my_requirement,jdbcType=VARCHAR}, #{my_name,jdbcType=VARCHAR}, 
-      #{my_mobile_no,jdbcType=INTEGER}, #{find_status,jdbcType=INTEGER}, #{student_profile,jdbcType=VARCHAR}, 
-      #{matched_tutor_id,jdbcType=INTEGER}, #{matched_tutor_name,jdbcType=VARCHAR}, #{matched_tutor_phone,jdbcType=INTEGER}, 
-      #{matched_tutor_profile,jdbcType=VARCHAR})
+    values (#{studentId,jdbcType=INTEGER}, #{myRequirement,jdbcType=VARCHAR}, #{myName,jdbcType=VARCHAR}, 
+      #{myMobileNo,jdbcType=INTEGER}, #{findStatus,jdbcType=INTEGER}, #{studentProfile,jdbcType=VARCHAR}, 
+      #{matchedTutorId,jdbcType=INTEGER}, #{matchedTutorName,jdbcType=VARCHAR}, #{matchedTutorPhone,jdbcType=INTEGER}, 
+      #{matchedTutorProfile,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.wuya.model.HelpFindTutor" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
@@ -47,118 +47,118 @@
     </selectKey>
     insert into help_find_tutor
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="student_id != null" >
+      <if test="studentId != null" >
         student_id,
       </if>
-      <if test="my_requirement != null" >
+      <if test="myRequirement != null" >
         my_requirement,
       </if>
-      <if test="my_name != null" >
+      <if test="myName != null" >
         my_name,
       </if>
-      <if test="my_mobile_no != null" >
+      <if test="myMobileNo != null" >
         my_mobile_no,
       </if>
-      <if test="find_status != null" >
+      <if test="findStatus != null" >
         find_status,
       </if>
-      <if test="student_profile != null" >
+      <if test="studentProfile != null" >
         student_profile,
       </if>
-      <if test="matched_tutor_id != null" >
+      <if test="matchedTutorId != null" >
         matched_tutor_id,
       </if>
-      <if test="matched_tutor_name != null" >
+      <if test="matchedTutorName != null" >
         matched_tutor_name,
       </if>
-      <if test="matched_tutor_phone != null" >
+      <if test="matchedTutorPhone != null" >
         matched_tutor_phone,
       </if>
-      <if test="matched_tutor_profile != null" >
+      <if test="matchedTutorProfile != null" >
         matched_tutor_profile,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="student_id != null" >
-        #{student_id,jdbcType=INTEGER},
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
       </if>
-      <if test="my_requirement != null" >
-        #{my_requirement,jdbcType=VARCHAR},
+      <if test="myRequirement != null" >
+        #{myRequirement,jdbcType=VARCHAR},
       </if>
-      <if test="my_name != null" >
-        #{my_name,jdbcType=VARCHAR},
+      <if test="myName != null" >
+        #{myName,jdbcType=VARCHAR},
       </if>
-      <if test="my_mobile_no != null" >
-        #{my_mobile_no,jdbcType=INTEGER},
+      <if test="myMobileNo != null" >
+        #{myMobileNo,jdbcType=INTEGER},
       </if>
-      <if test="find_status != null" >
-        #{find_status,jdbcType=INTEGER},
+      <if test="findStatus != null" >
+        #{findStatus,jdbcType=INTEGER},
       </if>
-      <if test="student_profile != null" >
-        #{student_profile,jdbcType=VARCHAR},
+      <if test="studentProfile != null" >
+        #{studentProfile,jdbcType=VARCHAR},
       </if>
-      <if test="matched_tutor_id != null" >
-        #{matched_tutor_id,jdbcType=INTEGER},
+      <if test="matchedTutorId != null" >
+        #{matchedTutorId,jdbcType=INTEGER},
       </if>
-      <if test="matched_tutor_name != null" >
-        #{matched_tutor_name,jdbcType=VARCHAR},
+      <if test="matchedTutorName != null" >
+        #{matchedTutorName,jdbcType=VARCHAR},
       </if>
-      <if test="matched_tutor_phone != null" >
-        #{matched_tutor_phone,jdbcType=INTEGER},
+      <if test="matchedTutorPhone != null" >
+        #{matchedTutorPhone,jdbcType=INTEGER},
       </if>
-      <if test="matched_tutor_profile != null" >
-        #{matched_tutor_profile,jdbcType=VARCHAR},
+      <if test="matchedTutorProfile != null" >
+        #{matchedTutorProfile,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.wuya.model.HelpFindTutor" >
     update help_find_tutor
     <set >
-      <if test="student_id != null" >
-        student_id = #{student_id,jdbcType=INTEGER},
+      <if test="studentId != null" >
+        student_id = #{studentId,jdbcType=INTEGER},
       </if>
-      <if test="my_requirement != null" >
-        my_requirement = #{my_requirement,jdbcType=VARCHAR},
+      <if test="myRequirement != null" >
+        my_requirement = #{myRequirement,jdbcType=VARCHAR},
       </if>
-      <if test="my_name != null" >
-        my_name = #{my_name,jdbcType=VARCHAR},
+      <if test="myName != null" >
+        my_name = #{myName,jdbcType=VARCHAR},
       </if>
-      <if test="my_mobile_no != null" >
-        my_mobile_no = #{my_mobile_no,jdbcType=INTEGER},
+      <if test="myMobileNo != null" >
+        my_mobile_no = #{myMobileNo,jdbcType=INTEGER},
       </if>
-      <if test="find_status != null" >
-        find_status = #{find_status,jdbcType=INTEGER},
+      <if test="findStatus != null" >
+        find_status = #{findStatus,jdbcType=INTEGER},
       </if>
-      <if test="student_profile != null" >
-        student_profile = #{student_profile,jdbcType=VARCHAR},
+      <if test="studentProfile != null" >
+        student_profile = #{studentProfile,jdbcType=VARCHAR},
       </if>
-      <if test="matched_tutor_id != null" >
-        matched_tutor_id = #{matched_tutor_id,jdbcType=INTEGER},
+      <if test="matchedTutorId != null" >
+        matched_tutor_id = #{matchedTutorId,jdbcType=INTEGER},
       </if>
-      <if test="matched_tutor_name != null" >
-        matched_tutor_name = #{matched_tutor_name,jdbcType=VARCHAR},
+      <if test="matchedTutorName != null" >
+        matched_tutor_name = #{matchedTutorName,jdbcType=VARCHAR},
       </if>
-      <if test="matched_tutor_phone != null" >
-        matched_tutor_phone = #{matched_tutor_phone,jdbcType=INTEGER},
+      <if test="matchedTutorPhone != null" >
+        matched_tutor_phone = #{matchedTutorPhone,jdbcType=INTEGER},
       </if>
-      <if test="matched_tutor_profile != null" >
-        matched_tutor_profile = #{matched_tutor_profile,jdbcType=VARCHAR},
+      <if test="matchedTutorProfile != null" >
+        matched_tutor_profile = #{matchedTutorProfile,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wuya.model.HelpFindTutor" >
     update help_find_tutor
-    set student_id = #{student_id,jdbcType=INTEGER},
-      my_requirement = #{my_requirement,jdbcType=VARCHAR},
-      my_name = #{my_name,jdbcType=VARCHAR},
-      my_mobile_no = #{my_mobile_no,jdbcType=INTEGER},
-      find_status = #{find_status,jdbcType=INTEGER},
-      student_profile = #{student_profile,jdbcType=VARCHAR},
-      matched_tutor_id = #{matched_tutor_id,jdbcType=INTEGER},
-      matched_tutor_name = #{matched_tutor_name,jdbcType=VARCHAR},
-      matched_tutor_phone = #{matched_tutor_phone,jdbcType=INTEGER},
-      matched_tutor_profile = #{matched_tutor_profile,jdbcType=VARCHAR}
+    set student_id = #{studentId,jdbcType=INTEGER},
+      my_requirement = #{myRequirement,jdbcType=VARCHAR},
+      my_name = #{myName,jdbcType=VARCHAR},
+      my_mobile_no = #{myMobileNo,jdbcType=INTEGER},
+      find_status = #{findStatus,jdbcType=INTEGER},
+      student_profile = #{studentProfile,jdbcType=VARCHAR},
+      matched_tutor_id = #{matchedTutorId,jdbcType=INTEGER},
+      matched_tutor_name = #{matchedTutorName,jdbcType=VARCHAR},
+      matched_tutor_phone = #{matchedTutorPhone,jdbcType=INTEGER},
+      matched_tutor_profile = #{matchedTutorProfile,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

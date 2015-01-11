@@ -3,8 +3,8 @@
 <mapper namespace="com.wuya.dao.RegistrationMapper" >
   <resultMap id="BaseResultMap" type="com.wuya.model.Registration" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="tutor_id" property="tutor_id" jdbcType="INTEGER" />
-    <result column="student_id" property="student_id" jdbcType="INTEGER" />
+    <result column="tutor_id" property="tutorId" jdbcType="INTEGER" />
+    <result column="student_id" property="studentId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, tutor_id, student_id
@@ -24,7 +24,7 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into registration (tutor_id, student_id)
-    values (#{tutor_id,jdbcType=INTEGER}, #{student_id,jdbcType=INTEGER})
+    values (#{tutorId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.wuya.model.Registration" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
@@ -32,38 +32,38 @@
     </selectKey>
     insert into registration
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="tutor_id != null" >
+      <if test="tutorId != null" >
         tutor_id,
       </if>
-      <if test="student_id != null" >
+      <if test="studentId != null" >
         student_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="tutor_id != null" >
-        #{tutor_id,jdbcType=INTEGER},
+      <if test="tutorId != null" >
+        #{tutorId,jdbcType=INTEGER},
       </if>
-      <if test="student_id != null" >
-        #{student_id,jdbcType=INTEGER},
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.wuya.model.Registration" >
     update registration
     <set >
-      <if test="tutor_id != null" >
-        tutor_id = #{tutor_id,jdbcType=INTEGER},
+      <if test="tutorId != null" >
+        tutor_id = #{tutorId,jdbcType=INTEGER},
       </if>
-      <if test="student_id != null" >
-        student_id = #{student_id,jdbcType=INTEGER},
+      <if test="studentId != null" >
+        student_id = #{studentId,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wuya.model.Registration" >
     update registration
-    set tutor_id = #{tutor_id,jdbcType=INTEGER},
-      student_id = #{student_id,jdbcType=INTEGER}
+    set tutor_id = #{tutorId,jdbcType=INTEGER},
+      student_id = #{studentId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

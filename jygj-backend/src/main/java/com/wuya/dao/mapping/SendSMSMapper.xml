@@ -4,13 +4,13 @@
   <resultMap id="BaseResultMap" type="com.wuya.model.SendSMS" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="sid" property="sid" jdbcType="CHAR" />
-    <result column="sms_type" property="sms_type" jdbcType="VARCHAR" />
+    <result column="sms_type" property="smsType" jdbcType="VARCHAR" />
     <result column="content" property="content" jdbcType="VARCHAR" />
-    <result column="phone_number" property="phone_number" jdbcType="VARCHAR" />
-    <result column="sent_result" property="sent_result" jdbcType="INTEGER" />
+    <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
+    <result column="sent_result" property="sentResult" jdbcType="INTEGER" />
     <result column="userd" property="userd" jdbcType="INTEGER" />
-    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
-    <result column="modify_time" property="modify_time" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, sid, sms_type, content, phone_number, sent_result, userd, create_time, modify_time
@@ -32,9 +32,9 @@
     insert into send_sms (sid, sms_type, content, 
       phone_number, sent_result, userd, 
       create_time, modify_time)
-    values (#{sid,jdbcType=CHAR}, #{sms_type,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{phone_number,jdbcType=VARCHAR}, #{sent_result,jdbcType=INTEGER}, #{userd,jdbcType=INTEGER}, 
-      #{create_time,jdbcType=TIMESTAMP}, #{modify_time,jdbcType=TIMESTAMP})
+    values (#{sid,jdbcType=CHAR}, #{smsType,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{phoneNumber,jdbcType=VARCHAR}, #{sentResult,jdbcType=INTEGER}, #{userd,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.wuya.model.SendSMS" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
@@ -45,25 +45,25 @@
       <if test="sid != null" >
         sid,
       </if>
-      <if test="sms_type != null" >
+      <if test="smsType != null" >
         sms_type,
       </if>
       <if test="content != null" >
         content,
       </if>
-      <if test="phone_number != null" >
+      <if test="phoneNumber != null" >
         phone_number,
       </if>
-      <if test="sent_result != null" >
+      <if test="sentResult != null" >
         sent_result,
       </if>
       <if test="userd != null" >
         userd,
       </if>
-      <if test="create_time != null" >
+      <if test="createTime != null" >
         create_time,
       </if>
-      <if test="modify_time != null" >
+      <if test="modifyTime != null" >
         modify_time,
       </if>
     </trim>
@@ -71,26 +71,26 @@
       <if test="sid != null" >
         #{sid,jdbcType=CHAR},
       </if>
-      <if test="sms_type != null" >
-        #{sms_type,jdbcType=VARCHAR},
+      <if test="smsType != null" >
+        #{smsType,jdbcType=VARCHAR},
       </if>
       <if test="content != null" >
         #{content,jdbcType=VARCHAR},
       </if>
-      <if test="phone_number != null" >
-        #{phone_number,jdbcType=VARCHAR},
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=VARCHAR},
       </if>
-      <if test="sent_result != null" >
-        #{sent_result,jdbcType=INTEGER},
+      <if test="sentResult != null" >
+        #{sentResult,jdbcType=INTEGER},
       </if>
       <if test="userd != null" >
         #{userd,jdbcType=INTEGER},
       </if>
-      <if test="create_time != null" >
-        #{create_time,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="modify_time != null" >
-        #{modify_time,jdbcType=TIMESTAMP},
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -100,26 +100,26 @@
       <if test="sid != null" >
         sid = #{sid,jdbcType=CHAR},
       </if>
-      <if test="sms_type != null" >
-        sms_type = #{sms_type,jdbcType=VARCHAR},
+      <if test="smsType != null" >
+        sms_type = #{smsType,jdbcType=VARCHAR},
       </if>
       <if test="content != null" >
         content = #{content,jdbcType=VARCHAR},
       </if>
-      <if test="phone_number != null" >
-        phone_number = #{phone_number,jdbcType=VARCHAR},
+      <if test="phoneNumber != null" >
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
       </if>
-      <if test="sent_result != null" >
-        sent_result = #{sent_result,jdbcType=INTEGER},
+      <if test="sentResult != null" >
+        sent_result = #{sentResult,jdbcType=INTEGER},
       </if>
       <if test="userd != null" >
         userd = #{userd,jdbcType=INTEGER},
       </if>
-      <if test="create_time != null" >
-        create_time = #{create_time,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="modify_time != null" >
-        modify_time = #{modify_time,jdbcType=TIMESTAMP},
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -127,13 +127,13 @@
   <update id="updateByPrimaryKey" parameterType="com.wuya.model.SendSMS" >
     update send_sms
     set sid = #{sid,jdbcType=CHAR},
-      sms_type = #{sms_type,jdbcType=VARCHAR},
+      sms_type = #{smsType,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},
-      phone_number = #{phone_number,jdbcType=VARCHAR},
-      sent_result = #{sent_result,jdbcType=INTEGER},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      sent_result = #{sentResult,jdbcType=INTEGER},
       userd = #{userd,jdbcType=INTEGER},
-      create_time = #{create_time,jdbcType=TIMESTAMP},
-      modify_time = #{modify_time,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

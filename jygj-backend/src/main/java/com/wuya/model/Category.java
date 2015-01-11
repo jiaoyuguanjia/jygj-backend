@@ -1,32 +1,33 @@
 package com.wuya.model;
 
 public class Category {
+    private Integer id;
 
-	private Integer id;
-	private String name;
-	private Integer parent_id;
+    private String name;
 
-	public Integer getId() {
-		return id;
-	}
+    private Integer parentId;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Integer getParent_id() {
-		return parent_id;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setParent_id(Integer parent_id) {
-		this.parent_id = parent_id;
-	}
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
 }

@@ -2,87 +2,100 @@ package com.wuya.model;
 
 import java.util.Date;
 
+import com.system.util.CommonResult;
+
 public class SendSMS {
+    private Integer id;
 
-	private Integer id;
-	private String sid;
-	private String sms_type;
-	private String content;
-	private String phone_number;
-	private Integer sent_result;
-	private Integer userd;
-	private Date create_time;
-	private Date modify_time;
+    private String sid;
 
-	public Integer getId() {
-		return id;
-	}
+    private String smsType;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private String content;
 
-	public String getSid() {
-		return sid;
-	}
+    private String phoneNumber;
 
-	public void setSid(String sid) {
-		this.sid = sid;
-	}
+    private Integer sentResult;
 
-	public String getSms_type() {
-		return sms_type;
-	}
+    private Integer userd;
 
-	public void setSms_type(String sms_type) {
-		this.sms_type = sms_type;
-	}
+    private Date createTime;
 
-	public String getContent() {
-		return content;
-	}
+    private Date modifyTime;
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getPhone_number() {
-		return phone_number;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
-	}
+    public String getSid() {
+        return sid;
+    }
 
-	public Integer getSent_result() {
-		return sent_result;
-	}
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
 
-	public void setSent_result(Integer sent_result) {
-		this.sent_result = sent_result;
-	}
+    public String getSmsType() {
+        return smsType;
+    }
 
-	public Integer getUserd() {
-		return userd;
-	}
+    public void setSmsType(String smsType) {
+        this.smsType = smsType;
+    }
 
-	public void setUserd(Integer userd) {
-		this.userd = userd;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public Date getCreate_time() {
-		return create_time;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public void setCreate_time(Date create_time) {
-		this.create_time = create_time;
-	}
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-	public Date getModify_time() {
-		return modify_time;
-	}
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public void setModify_time(Date modify_time) {
-		this.modify_time = modify_time;
-	}
+    public Integer getSentResult() {
+        return sentResult;
+    }
+
+    public void setSentResult(CommonResult sentResult){
+    	this.sentResult = sentResult.getCode();
+    }
+    
+    public void setSentResult(Integer sentResult) {
+        this.sentResult = sentResult;
+    }
+
+    public Integer getUserd() {
+        return userd;
+    }
+
+    public void setUserd(Integer userd) {
+        this.userd = userd;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
 }

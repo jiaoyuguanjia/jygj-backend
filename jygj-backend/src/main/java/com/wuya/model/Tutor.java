@@ -1,77 +1,83 @@
 package com.wuya.model;
 
 public class Tutor {
+    private Integer id;
 
-	private Integer id;
-	private Integer user_id;
-	private Integer profession;
-	private Integer teaching_age;
-	private String tutoring_timing;
-	private Integer tutoring_type;
-	private Integer is_hide;
-	private String tutoring_area;
+    private Integer userId;
 
-	public Integer getId() {
-		return id;
-	}
+    private Integer profession;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private Integer teachingAge;
 
-	public Integer getUser_id() {
-		return user_id;
-	}
+    private String tutoringTiming;
 
-	public void setUser_id(Integer user_id) {
-		this.user_id = user_id;
-	}
+    private Integer tutoringType;
 
-	public Integer getProfession() {
-		return profession;
-	}
+    private Integer isHide;
 
-	public void setProfession(Integer profession) {
-		this.profession = profession;
-	}
+    private String tutoringArea;
 
-	public Integer getTeaching_age() {
-		return teaching_age;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setTeaching_age(Integer teaching_age) {
-		this.teaching_age = teaching_age;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getTutoring_timing() {
-		return tutoring_timing;
-	}
+    public Integer getUserId() {
+        return userId;
+    }
 
-	public void setTutoring_timing(String tutoring_timing) {
-		this.tutoring_timing = tutoring_timing;
-	}
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	public Integer getTutoring_type() {
-		return tutoring_type;
-	}
+    public Integer getProfession() {
+        return profession;
+    }
 
-	public void setTutoring_type(Integer tutoring_type) {
-		this.tutoring_type = tutoring_type;
-	}
+    public void setProfession(Integer profession) {
+        this.profession = profession;
+    }
 
-	public Integer getIs_hide() {
-		return is_hide;
-	}
+    public Integer getTeachingAge() {
+        return teachingAge;
+    }
 
-	public void setIs_hide(Integer is_hide) {
-		this.is_hide = is_hide;
-	}
+    public void setTeachingAge(Integer teachingAge) {
+        this.teachingAge = teachingAge;
+    }
 
-	public String getTutoring_area() {
-		return tutoring_area;
-	}
+    public String getTutoringTiming() {
+        return tutoringTiming;
+    }
 
-	public void setTutoring_area(String tutoring_area) {
-		this.tutoring_area = tutoring_area;
-	}
+    public void setTutoringTiming(String tutoringTiming) {
+        this.tutoringTiming = tutoringTiming;
+    }
+
+    public Integer getTutoringType() {
+        return tutoringType;
+    }
+
+    public void setTutoringType(Integer tutoringType) {
+        this.tutoringType = tutoringType;
+    }
+
+    public Integer getIsHide() {
+        return isHide;
+    }
+
+    public void setIsHide(Integer isHide) {
+        this.isHide = isHide;
+    }
+
+    public String getTutoringArea() {
+        return tutoringArea;
+    }
+
+    public void setTutoringArea(String tutoringArea) {
+        this.tutoringArea = tutoringArea;
+    }
 }

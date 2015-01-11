@@ -3,11 +3,11 @@
 <mapper namespace="com.wuya.dao.QualificationMapper" >
   <resultMap id="BaseResultMap" type="com.wuya.model.Qualification" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="tutor_id" property="tutor_id" jdbcType="INTEGER" />
-    <result column="qualification_type" property="qualification_type" jdbcType="INTEGER" />
-    <result column="img_url" property="img_url" jdbcType="VARCHAR" />
-    <result column="certificate_des" property="certificate_des" jdbcType="VARCHAR" />
-    <result column="approval_status" property="approval_status" jdbcType="INTEGER" />
+    <result column="tutor_id" property="tutorId" jdbcType="INTEGER" />
+    <result column="qualification_type" property="qualificationType" jdbcType="INTEGER" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="certificate_des" property="certificateDes" jdbcType="VARCHAR" />
+    <result column="approval_status" property="approvalStatus" jdbcType="INTEGER" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -30,8 +30,8 @@
     insert into qualification (tutor_id, qualification_type, img_url, 
       certificate_des, approval_status, remark
       )
-    values (#{tutor_id,jdbcType=INTEGER}, #{qualification_type,jdbcType=INTEGER}, #{img_url,jdbcType=VARCHAR}, 
-      #{certificate_des,jdbcType=VARCHAR}, #{approval_status,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}
+    values (#{tutorId,jdbcType=INTEGER}, #{qualificationType,jdbcType=INTEGER}, #{imgUrl,jdbcType=VARCHAR}, 
+      #{certificateDes,jdbcType=VARCHAR}, #{approvalStatus,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.wuya.model.Qualification" >
@@ -40,19 +40,19 @@
     </selectKey>
     insert into qualification
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="tutor_id != null" >
+      <if test="tutorId != null" >
         tutor_id,
       </if>
-      <if test="qualification_type != null" >
+      <if test="qualificationType != null" >
         qualification_type,
       </if>
-      <if test="img_url != null" >
+      <if test="imgUrl != null" >
         img_url,
       </if>
-      <if test="certificate_des != null" >
+      <if test="certificateDes != null" >
         certificate_des,
       </if>
-      <if test="approval_status != null" >
+      <if test="approvalStatus != null" >
         approval_status,
       </if>
       <if test="remark != null" >
@@ -60,20 +60,20 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="tutor_id != null" >
-        #{tutor_id,jdbcType=INTEGER},
+      <if test="tutorId != null" >
+        #{tutorId,jdbcType=INTEGER},
       </if>
-      <if test="qualification_type != null" >
-        #{qualification_type,jdbcType=INTEGER},
+      <if test="qualificationType != null" >
+        #{qualificationType,jdbcType=INTEGER},
       </if>
-      <if test="img_url != null" >
-        #{img_url,jdbcType=VARCHAR},
+      <if test="imgUrl != null" >
+        #{imgUrl,jdbcType=VARCHAR},
       </if>
-      <if test="certificate_des != null" >
-        #{certificate_des,jdbcType=VARCHAR},
+      <if test="certificateDes != null" >
+        #{certificateDes,jdbcType=VARCHAR},
       </if>
-      <if test="approval_status != null" >
-        #{approval_status,jdbcType=INTEGER},
+      <if test="approvalStatus != null" >
+        #{approvalStatus,jdbcType=INTEGER},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -83,20 +83,20 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.wuya.model.Qualification" >
     update qualification
     <set >
-      <if test="tutor_id != null" >
-        tutor_id = #{tutor_id,jdbcType=INTEGER},
+      <if test="tutorId != null" >
+        tutor_id = #{tutorId,jdbcType=INTEGER},
       </if>
-      <if test="qualification_type != null" >
-        qualification_type = #{qualification_type,jdbcType=INTEGER},
+      <if test="qualificationType != null" >
+        qualification_type = #{qualificationType,jdbcType=INTEGER},
       </if>
-      <if test="img_url != null" >
-        img_url = #{img_url,jdbcType=VARCHAR},
+      <if test="imgUrl != null" >
+        img_url = #{imgUrl,jdbcType=VARCHAR},
       </if>
-      <if test="certificate_des != null" >
-        certificate_des = #{certificate_des,jdbcType=VARCHAR},
+      <if test="certificateDes != null" >
+        certificate_des = #{certificateDes,jdbcType=VARCHAR},
       </if>
-      <if test="approval_status != null" >
-        approval_status = #{approval_status,jdbcType=INTEGER},
+      <if test="approvalStatus != null" >
+        approval_status = #{approvalStatus,jdbcType=INTEGER},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
@@ -106,11 +106,11 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wuya.model.Qualification" >
     update qualification
-    set tutor_id = #{tutor_id,jdbcType=INTEGER},
-      qualification_type = #{qualification_type,jdbcType=INTEGER},
-      img_url = #{img_url,jdbcType=VARCHAR},
-      certificate_des = #{certificate_des,jdbcType=VARCHAR},
-      approval_status = #{approval_status,jdbcType=INTEGER},
+    set tutor_id = #{tutorId,jdbcType=INTEGER},
+      qualification_type = #{qualificationType,jdbcType=INTEGER},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      certificate_des = #{certificateDes,jdbcType=VARCHAR},
+      approval_status = #{approvalStatus,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

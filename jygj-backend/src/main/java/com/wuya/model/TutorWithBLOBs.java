@@ -1,41 +1,43 @@
 package com.wuya.model;
 
 public class TutorWithBLOBs extends Tutor {
+    private String profile;
 
-	private String profile;
-	private String edu_background;
-	private String work_exp;
-	private String remark;
+    private String eduBackground;
 
-	public String getProfile() {
-		return profile;
-	}
+    private String workExp;
 
-	public void setProfile(String profile) {
-		this.profile = profile;
-	}
+    private String remark;
 
-	public String getEdu_background() {
-		return edu_background;
-	}
+    public String getProfile() {
+        return profile;
+    }
 
-	public void setEdu_background(String edu_background) {
-		this.edu_background = edu_background;
-	}
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
 
-	public String getWork_exp() {
-		return work_exp;
-	}
+    public String getEduBackground() {
+        return eduBackground;
+    }
 
-	public void setWork_exp(String work_exp) {
-		this.work_exp = work_exp;
-	}
+    public void setEduBackground(String eduBackground) {
+        this.eduBackground = eduBackground;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getWorkExp() {
+        return workExp;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setWorkExp(String workExp) {
+        this.workExp = workExp;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 }

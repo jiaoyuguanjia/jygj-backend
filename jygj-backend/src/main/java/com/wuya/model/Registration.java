@@ -1,32 +1,33 @@
 package com.wuya.model;
 
 public class Registration {
+    private Integer id;
 
-	private Integer id;
-	private Integer tutor_id;
-	private Integer student_id;
+    private Integer tutorId;
 
-	public Integer getId() {
-		return id;
-	}
+    private Integer studentId;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public Integer getTutor_id() {
-		return tutor_id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setTutor_id(Integer tutor_id) {
-		this.tutor_id = tutor_id;
-	}
+    public Integer getTutorId() {
+        return tutorId;
+    }
 
-	public Integer getStudent_id() {
-		return student_id;
-	}
+    public void setTutorId(Integer tutorId) {
+        this.tutorId = tutorId;
+    }
 
-	public void setStudent_id(Integer student_id) {
-		this.student_id = student_id;
-	}
+    public Integer getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
+    }
 }
